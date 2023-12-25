@@ -5,7 +5,7 @@
   "author": "丘光义 <qiuguangyi@52tt.com>",
   "homepage": "https://github.com/qiuguangyi123/encode-fe-spec#readme",
   "license": "ISC",
-  "main": "stylelint-config.js",
+  "main": "index.js",
   "directories": {
     "test": "__tests__"
   },
@@ -16,13 +16,17 @@
     "type": "git",
     "url": "git+https://github.com/encode-studio-fe/fe-spec.git"
   },
+  "peerDependencies": {
+    "stylelint": ">=8.3.0",
+    "stylelint-scss": ">=2.0.0"
+  },
   "devDependencies": {
-    "jest": "^29.5.0",
-    "stylelint": "^14.3.0",
+    "stylelint": "^15.6.0",
     "stylelint-scss": "^4.1.0"
   },
   "scripts": {
-    "test": "node ./__tests__/stylelint-config.test.js"
+    "prepare": "npm ls stylelint stylelint-scss || echo 'no stylelint stylelint-scss package'",
+    "test": "jest"
   },
   "bugs": {
     "url": "https://github.com/qiuguangyi123/encode-fe-spec/issues"
