@@ -10,6 +10,7 @@ dir_exists() {
 }
 
 rm_dist(){
+  # 回到上次路径
   cd -
   if [ "$(dir_exists $dist_path)" = "true" ]; then
     echo "remove $dist_path"
