@@ -1,24 +1,15 @@
 {
-  "name": "eslint-config",
+  "name": "qgy-eslint-config",
   "version": "0.0.6",
   "description": "> TODO: description",
   "author": "丘光义 <qiuguangyi@52tt.com>",
   "homepage": "https://github.com/qiuguangyi123/encode-fe-spec#readme",
   "license": "ISC",
-  "main": "lib/eslint-config.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "encode",
-    "javaScript",
-    "typescript",
-    "node",
-    "lint"
-  ],
+  "main": "index.js",
   "scripts": {
-    "test": "node ./__tests__/eslint-config.test.js"
+    "lint": "eslint ./",
+    "test": "mocha ./__tests__/*.test.js --timeout 5000",
+    "print-config": "eslint --print-config ./index.js > ./print-config.json"
   },
   "repository": {
     "type": "git",
