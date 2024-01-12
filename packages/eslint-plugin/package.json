@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-qgy",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "自定义插件",
   "keywords": [
     "eslint",
@@ -25,9 +25,6 @@
   "devDependencies": {
     "eslint": "^8.7.0",
     "jest": "^26.6.3"
-  },
-  "publishConfig": {
-    "registry": "https://r.cnpmjs.org/"
   },
   "repository": {
     "type": "git",
