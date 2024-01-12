@@ -1,6 +1,6 @@
 {
   "name": "qgy-commitlint-config",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "index.js",
   "description": "印客学院 Git规范",
   "keywords": [
