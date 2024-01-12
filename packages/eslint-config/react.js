@@ -1,9 +1,9 @@
 module.exports = {
-  extends: ["./index.js", "./rule/react.js"].map(require.resolve),
+  extends: ['./index.js', './rule/react.js'].map(require.resolve),
   parserOptions: {
-    parser: "@babel/eslint-parser",
+    parser: '@babel/eslint-parser',
     babelOptions: {
-      presets: ["@babel/preset-react"],
+      presets: ['@babel/preset-react'],
     },
   },
 };

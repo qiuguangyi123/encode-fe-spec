@@ -1,0 +1,42 @@
+{
+  "name": "eslint-plugin-qgy",
+  "version": "0.0.6",
+  "description": "自定义插件",
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "qgy"
+  ],
+  "author": "丘光义 <qiuguangyi@52tt.com>",
+  "homepage": "https://github.com/qiuguangyi123/encode-fe-spec#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "directories": {
+    "prepublishOnly": "npm run test",
+    "test": "jest"
+  },
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "fs-extra": "^9.0.1",
+    "require-all": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.7.0",
+    "jest": "^26.6.3"
+  },
+  "publishConfig": {
+    "registry": "https://r.cnpmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiuguangyi123/encode-fe-spec.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/eslint-plugin.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/qiuguangyi123/encode-fe-spec/issues"
+  }
+}

@@ -1,3 +1,3 @@
 module.exports = {
-    extends: ['./essential/index'].map(require.resolve),
+  extends: ['./index'].map(require.resolve),
 };
