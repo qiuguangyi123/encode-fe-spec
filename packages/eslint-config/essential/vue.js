@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ["../vue", "./index"].map(require.resolve),
-}
+  extends: ['../vue', './index'].map(require.resolve),
+};

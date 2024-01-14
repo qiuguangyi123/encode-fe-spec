@@ -7,11 +7,10 @@ module.exports = {
     './rules/base/es6',
     './rules/base/strict',
     './rules/imports',
-  ].map(require.resolve),
-  plugins: ['qgy'],
-  rules: {
-    'qgy/no-broad-semantic-versioning': 'error',
-  },
+    './rules/json',
+  ]
+    .map(require.resolve)
+    .concat(['plugin:qgy/recommended']),
   parser: '@babel/eslint-parser',
   // 告诉编译器要如何运行
   parserOptions: {

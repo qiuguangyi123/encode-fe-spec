@@ -11,10 +11,6 @@
   "homepage": "https://github.com/qiuguangyi123/encode-fe-spec#readme",
   "license": "ISC",
   "main": "index.js",
-  "directories": {
-    "prepublishOnly": "npm run test",
-    "test": "jest"
-  },
   "files": [
     "lib"
   ],
@@ -31,7 +27,8 @@
     "url": "git+https://github.com/qiuguangyi123/encode-fe-spec.git"
   },
   "scripts": {
-    "test": "node ./__tests__/eslint-plugin.test.js"
+    "prepublishOnly": "npm run test",
+    "test": "jest"
   },
   "bugs": {
     "url": "https://github.com/qiuguangyi123/encode-fe-spec/issues"

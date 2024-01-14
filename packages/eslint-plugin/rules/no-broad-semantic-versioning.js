@@ -23,8 +23,8 @@ module.exports = {
           if (['dependencies', 'devDependencies'].includes(node?.key.value)) {
             node.value.properties.forEach((val) => {
               const properties = val.value.value;
-              // val.value.value.indexOf('x') > -1 || val.value.value.indexOf('>') > -1
               if (properties.indexOf('x') > -1 || properties.indexOf('>') > -1 || (properties.indexOf('*') > -1 && properties !== 'workspace:*')) {
+                // properties.indexOf('x') > -1 || properties.indexOf('>') > -1 || (properties.indexOf('*') > -1 && properties !== 'workspace:*')
                 // console.log(rule.test(val?.value?.value), val?.value?.value);
                 // 进行报错
                 context.report({
