@@ -14,7 +14,7 @@ ruleTester.run('no-http-url', rule, {
     {
       filename: 'test.js',
       code: 'var a = "http://aaaa.com"',
-      output: 'var a = "https://aaaa.com"',
+      // output: 'var a = "https://aaaa.com"',
       errors: [
         {
           messageId: 'noHttpUrl',

@@ -11,6 +11,7 @@ module.exports = {
     },
   },
   create(context) {
+    // console.log(path.basename('./././test.js'));
     if (path.basename(context.getFilename()) !== 'package.json') {
       return {};
     }
