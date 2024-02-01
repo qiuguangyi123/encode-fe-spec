@@ -1,5 +1,5 @@
 {
-  "name": "qgy-commitlint-config",
+  "name": "@qgy/commitlint-config",
   "version": "0.0.10",
   "main": "index.js",
   "description": "印客学院 Git规范",
@@ -12,14 +12,14 @@
     "index.js"
   ],
   "author": "qiuguangyi",
-  "homepage": "https://github.com/encode-studio-fe/fe-spec#readme",
+  "homepage": "https://github.com/qiuguangyi123/encode-fe-spec#readme",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/encode-studio-fe/fe-spec.git"
+    "url": "git+https://github.com/qiuguangyi123/encode-fe-spec.git"
   },
   "bugs": {
-    "url": "https://github.com/encode-studio-fe/fe-spec/issues"
+    "url": "https://github.com/qiuguangyi123/encode-fe-spec/issues"
   },
   "dependencies": {
     "conventional-changelog-conventionalcommits": "^4.5.0"

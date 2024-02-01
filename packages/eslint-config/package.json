@@ -1,5 +1,5 @@
 {
-  "name": "qgy-eslint-config",
+  "name": "@qgy/eslint-config",
   "version": "0.0.10",
   "description": "> TODO: description",
   "author": "丘光义 <qiuguangyi@52tt.com>",
@@ -13,10 +13,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/encode-studio-fe/fe-spec.git"
+    "url": "git+https://github.com/qiuguangyi123/encode-fe-spec.git"
   },
   "bugs": {
-    "url": "https://github.com/encode-studio-fe/fe-spec/issues"
+    "url": "https://github.com/qiuguangyi123/encode-fe-spec/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -30,7 +30,7 @@
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-jsx-plus": "^0.1.0",
-    "eslint-plugin-qgy": "workspace:*",
+    "@qgy/eslint-plugin": "workspace:*",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-json": "^3.1.0",
