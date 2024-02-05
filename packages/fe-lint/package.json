@@ -87,7 +87,9 @@
   },
   "scripts": {
     "test": "node ./__tests__/@qgy/fe-lint.test.js",
-    "build": "tsc"
+    "build": "npm run copyfile && tsc -p ./tsconfig.pro.json",
+    "dev": "npm run copyfile && tsc -w",
+    "copyfile": "copyfiles -a -u 1 \"./src/templates/**/*.ejs\" ./lib"
   },
   "bugs": {
     "url": "https://github.com/qiuguangyi123/encode-fe-spec/issues"

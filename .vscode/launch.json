@@ -7,9 +7,9 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "启动程序",
-      "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/packages/eslint-plugin/rules/no-broad-semantic-versioning.js"
+      "name": "fe-lint",
+      "runtimeArgs": ["-r", "ts-node/register"],
+      "args": ["./packages/fe-lint/src/test.ts"]
     }
   ]
 }
