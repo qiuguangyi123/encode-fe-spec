@@ -78,4 +78,35 @@ export const INQUIRER_VALUE: Record<INQUIRER, any> = {
       return true;
     },
   },
+  [INQUIRER.ENABLE_MARKDOWNLINT]: {
+    type: 'confirm',
+    name: INQUIRER.ENABLE_MARKDOWNLINT,
+    message: '是否启用 markdownlint?',
+    default: () => {
+      return true;
+    },
+  },
+  [INQUIRER.ENABLE_PRETTIER]: {
+    type: 'confirm',
+    name: INQUIRER.ENABLE_PRETTIER,
+    message: '是否启用 prettier?',
+    default: () => {
+      return true;
+    },
+  },
 };
+
+export const REMOVE_PACKAGE_NAME: string[] = [
+  '@babel/eslint-parser',
+  '@commitlint/cli',
+  '@iceworks/spec',
+  'babel-eslint',
+  'eslint',
+  'husky',
+  'markdownlint',
+  'prettier',
+  'stylelint',
+  'tslint',
+];
+
+export const REMOVE_PACKAGE_PREFIXES: string[] = ['@commitlint/', '@typescript-eslint/', 'eslint-', 'stylelint-', 'markdownlint-', 'commitlint-'];

@@ -35,7 +35,7 @@ export default async (install: boolean = false) => {
     if (install && updateVersionState) {
       console.log(`\n当前版本：${PKG_VERSION}，最新版本：${lastVersion}，准备自动更新`);
       // 通过子线程进行更新 同时将信息打印出来
-      console.log(process.env.PATH);
+      // console.log(process.env.PATH);
       const { status } = spawnSync(npmType(), ['install', PKG_NAME], { stdio: 'inherit' });
       if (status) throw new Error('自动更新出错，请手动更新');
     } else if (updateVersionState) {
@@ -44,8 +44,10 @@ export default async (install: boolean = false) => {
       console.log(`\n当前版本：${PKG_VERSION}，已经是最新版本`);
     }
     loading.succeed('检测更新完成');
+    return true;
   } catch (err) {
     log(err);
     loading.fail('检测更新失败');
+    return false;
   }
 };
