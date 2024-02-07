@@ -1,0 +1,2 @@
+module.exports = { extends: [ '<%= eslintType === 'index' ? '@qgy/eslint-config' : `@qgy/eslint-config/${eslintType}`
+%>', <%_ if (enablePrettier) { _%> 'prettier', <%_ } _%> ], };

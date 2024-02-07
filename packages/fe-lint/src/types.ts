@@ -24,6 +24,8 @@ export interface InitOptions {
   enableMarkdownlint?: boolean;
   // 是否启用 prettier
   enablePrettier?: boolean;
+  // 是否启用 commitlint
+  enableCommitlint?: boolean;
   // 是否禁用自动在初始化完成后安装依赖
   disableNpmInstall?: boolean;
 }
@@ -41,4 +43,6 @@ export enum INQUIRER {
   ENABLE_STYLELINT = 'enableStyleLint',
   ENABLE_MARKDOWNLINT = 'enableMarkdownlint',
   ENABLE_PRETTIER = 'enablePrettier',
+  ENABLE_COMMITLINT = 'enableCommitlint',
+  REWRITE_CONFIG = 'rewriteConfig',
 }

@@ -2,6 +2,11 @@ import path from 'path';
 import { INQUIRER, PKG } from '../types';
 import fs from 'fs';
 
+export const UNICODE = {
+  success: '\u2714',
+  failure: '\u2716',
+};
+
 // 导出脚手架基本信息
 export const PKG_VALUE: PKG = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../package.json'), 'utf-8'));
 
@@ -94,6 +99,22 @@ export const INQUIRER_VALUE: Record<INQUIRER, any> = {
       return true;
     },
   },
+  [INQUIRER.ENABLE_COMMITLINT]: {
+    type: 'confirm',
+    name: INQUIRER.ENABLE_COMMITLINT,
+    message: '是否启用 commitlint?',
+    default: () => {
+      return true;
+    },
+  },
+  [INQUIRER.REWRITE_CONFIG]: {
+    type: 'confirm',
+    name: INQUIRER.REWRITE_CONFIG,
+    message: '检测到配置冲突，是否需要自动重写 lint 配置?',
+    default: () => {
+      return true;
+    },
+  },
 };
 
 export const REMOVE_PACKAGE_NAME: string[] = [
@@ -109,4 +130,11 @@ export const REMOVE_PACKAGE_NAME: string[] = [
   'tslint',
 ];
 
-export const REMOVE_PACKAGE_PREFIXES: string[] = ['@commitlint/', '@typescript-eslint/', 'eslint-', 'stylelint-', 'markdownlint-', 'commitlint-'];
+export const REMOVE_PACKAGE_PREFIXES: string[] = [
+  '@commitlint/',
+  '@typescript-eslint/',
+  'eslint-',
+  'stylelint-',
+  'markdownlint-',
+  'commitlint-',
+];
