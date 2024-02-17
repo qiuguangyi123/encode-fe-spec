@@ -7,6 +7,8 @@ import configCollocate from '../utils/configCollocate';
 import renderTemplate from '../utils/renderTemplate';
 import commitEnter from '../utils/commitEnter';
 import os from 'os';
+import { spawnSync } from 'child_process';
+import npmType from '../utils/npmType';
 export default async (options: InitOptions) => {
   try {
     const isTest = process.env.NODE_ENV === 'test';
@@ -35,6 +37,10 @@ export default async (options: InitOptions) => {
       // 归置目前存在的配置
       log.info('准备开始检查是否有配置冲突～');
       await configCollocate({ cwd: options.cwd, rewriteConfig: options.rewriteConfig });
+      if (!options.disableNpmInstall) {
+        const install = npmType();
+        spawnSync(install, ['install', PKG_NAME], { stdio: 'inherit' });
+      }
       log.info('检查配置冲突完成！');
     }
     // 卡点
