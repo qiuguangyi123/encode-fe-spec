@@ -46,3 +46,36 @@ export enum INQUIRER {
   ENABLE_COMMITLINT = 'enableCommitlint',
   REWRITE_CONFIG = 'rewriteConfig',
 }
+// lint工具扫描每个文件的结果
+export interface ScanResult {
+  filePath: string;
+  errorCount: number;
+  warningCount: number;
+  fixableErrorCount: number;
+  fixableWarningCount: number;
+  messages: Array<{
+    line: number;
+    column: number;
+    message: string;
+    ruleId: string;
+    severity: number;
+  }>;
+}
+// scan指令最终导出的结果
+export interface ScanReport {
+  results: ScanResult[];
+  errorCount: number;
+  warningCount: number;
+  runErrors: Error[];
+}
+
+export interface ScanOptions {
+  cwd: string;
+  include: string;
+  files?: string[];
+  quiet?: boolean;
+  ignore?: boolean;
+  fix?: boolean;
+  outputReport?: boolean;
+  config?: any;
+}
