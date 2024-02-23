@@ -67,7 +67,6 @@ program
       log.error('扫描出错，请稍后再试！');
       process.exit(1);
     }
-    installDepsIfThereNo();
   });
 
 // 注入命令行参数
