@@ -1,3 +1,7 @@
+import { ESLint } from 'eslint';
+import stylelint from 'stylelint';
+import markdownlint from 'markdownlint';
+
 export interface PKG {
   eslintConfig?: any;
   eslintIgnore?: any;
@@ -6,6 +10,23 @@ export interface PKG {
   devDependencies?: Record<string, string>;
   dependencies?: Record<string, string>;
   [key: string]: any;
+}
+// scan fix 用户自定义配置
+export interface Config {
+  // 是否启用 ESLint
+  enableESLint?: boolean;
+  // 是否启用 stylelint
+  enableStylelint?: boolean;
+  // 是否启用 markdown lint
+  enableMarkdownlint?: boolean;
+  // 是否启用 prettier
+  enablePrettier?: boolean;
+  // ESLint 配置项
+  eslintOptions?: ESLint.Options;
+  // stylelint 配置项
+  stylelintOptions?: stylelint.LinterOptions;
+  // markdownlint 配置项
+  markdownlintOptions?: markdownlint.Options;
 }
 
 export interface InitOptions {
@@ -56,9 +77,10 @@ export interface ScanResult {
   messages: Array<{
     line: number;
     column: number;
+    rule: string;
+    url: string;
     message: string;
-    ruleId: string;
-    severity: number;
+    errored: boolean;
   }>;
 }
 // scan指令最终导出的结果

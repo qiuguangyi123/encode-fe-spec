@@ -10,24 +10,32 @@ import log from './utils/log';
 import glob from 'glob';
 import { spawnSync } from 'child_process';
 import npmType from './utils/npmType';
+import scan from './actions/scan';
 
 const cwd = process.cwd();
 // 注册版本号
 program.version(PKG_VERSION);
 // 若无 node_modules，则帮用户 install（否则会找不到 config）
 const installDepsIfThereNo = () => {
-  const lintConfigFiles = []
-    .concat(glob.sync('.eslintrc?(.@(yaml|yml|json|js))'))
-    .concat(glob.sync('.stylelintrc?(.@(yaml|yml|json|js))'))
-    .concat(glob.sync('.markdownlint@(rc|?(.@(yaml|yml|json|js)))'))
-    .concat(glob.sync('.prettierrc?(.@(js|cjs|config.js|config.cjs|yaml|yml|json|json5|toml))'))
-    .concat(glob.sync('tslint.@(yaml|yml|json)'))
-    .concat(glob.sync('.kelerc?(.@(yaml|yml|json))'))
-    .concat(glob.sync('commitlint.config.@(yaml|yml|json|js)')) as string[];
-  const nodeModulesPath = path.resolve(cwd, 'node_modules');
-  if (lintConfigFiles.length > 0 && !fs.existsSync(nodeModulesPath)) {
-    log.info(`使用项目 Lint 配置，检测到项目未安装依赖，将进行安装（执行 ${npmType()} install）`);
-    spawnSync(npmType(), ['install'], { stdio: 'inherit' });
+  try {
+    const lintConfigFiles = []
+      .concat(glob.sync('.eslintrc?(.@(yaml|yml|json|js))'))
+      .concat(glob.sync('.stylelintrc?(.@(yaml|yml|json|js))'))
+      .concat(glob.sync('.markdownlint@(rc|?(.@(yaml|yml|json|js)))'))
+      .concat(glob.sync('.prettierrc?(.@(js|cjs|config.js|config.cjs|yaml|yml|json|json5|toml))'))
+      .concat(glob.sync('tslint.@(yaml|yml|json)'))
+      .concat(glob.sync('.kelerc?(.@(yaml|yml|json))'))
+      .concat(glob.sync('commitlint.config.@(yaml|yml|json|js)')) as string[];
+    const nodeModulesPath = path.resolve(cwd, 'node_modules');
+    if (lintConfigFiles.length > 0 && !fs.existsSync(nodeModulesPath)) {
+      log.info(`使用项目 Lint 配置，检测到项目未安装依赖，将进行安装（执行 ${npmType()} install）`);
+      const { status } = spawnSync(npmType(), ['install'], { stdio: 'inherit' });
+      if (status) throw new Error('自动更新出错，请手动更新');
+    }
+  } catch (err) {
+    console.log(err);
+    log.error('自动下载依赖失败！');
+    process.exit(0);
   }
 };
 // 注册指令
@@ -59,9 +67,16 @@ program
   .option('-o --output-report', '输出扫描出的规范问题日志')
   .option('-i --include <dirPath>', '指定要扫描的目录')
   .option('--no-ignore', '忽略eslint的ignore配置文件和ignore规则')
-  .action(() => {
+  .action((options) => {
     try {
       installDepsIfThereNo();
+      scan({
+        cwd: options.cwd || process.cwd(),
+        include: options.include || process.cwd(),
+        quiet: options.quiet || false,
+        ignore: options.ignore || false,
+        outputReport: options.outputReport || false,
+      });
     } catch (err) {
       console.log(err);
       log.error('扫描出错，请稍后再试！');

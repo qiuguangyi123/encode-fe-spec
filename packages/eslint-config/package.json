@@ -30,7 +30,7 @@
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-jsx-plus": "^0.1.0",
-    "@qgy/eslint-plugin": "workspace:*",
+    "eslint-plugin-qgy": "workspace:*",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-json": "^3.1.0",
