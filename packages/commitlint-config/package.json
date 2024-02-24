@@ -1,5 +1,5 @@
 {
-  "name": "@qgy/commitlint-config",
+  "name": "commitlint-config-qgy",
   "version": "0.0.11",
   "main": "index.js",
   "description": "印客学院 Git规范",
@@ -24,5 +24,5 @@
   "dependencies": {
     "conventional-changelog-conventionalcommits": "^4.5.0"
   },
-  "gitHead": "6056eaedb5eab66f8b6603b1ccbefc8f9fe9a884"
+  "gitHead": "1201e4ffc1357e3250d052d194fab01f0b91e999"
 }

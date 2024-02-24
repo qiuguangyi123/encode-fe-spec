@@ -1,5 +1,5 @@
 {
-  "name": "@qgy/qgy-fe-lint",
+  "name": "qgy-fe-lint-qgy",
   "version": "0.0.11",
   "description": "规范脚手架",
   "keywords": [
@@ -41,10 +41,10 @@
     "@babel/eslint-parser": "^7.16.3",
     "@babel/preset-react": "^7.16.0",
     "@commitlint/cli": "^16.0.0",
-    "@qgy/commitlint-config": "workspace:*",
-    "@qgy/eslint-config": "workspace:*",
-    "@qgy/markdownlint-config": "workspace:*",
-    "@qgy/stylelint-config": "workspace:*",
+    "@qgy/commitlint-config": "0.0.11",
+    "@qgy/eslint-config": "0.0.11",
+    "@qgy/markdownlint-config": "0.0.11",
+    "@qgy/stylelint-config": "0.0.11",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "chalk": "^4.1.0",
@@ -93,5 +93,6 @@
   },
   "bugs": {
     "url": "https://github.com/qiuguangyi123/encode-fe-spec/issues"
-  }
+  },
+  "gitHead": "1201e4ffc1357e3250d052d194fab01f0b91e999"
 }
