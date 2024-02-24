@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-qgy",
   "version": "0.0.12",
-  "description": "> TODO: description",
+  "description": "eslint规范配置",
   "author": "丘光义 <qiuguangyi@52tt.com>",
   "homepage": "https://github.com/qiuguangyi123/encode-fe-spec#readme",
   "license": "ISC",

@@ -12,7 +12,7 @@ export default (options: Pick<InitOptions, 'cwd'>) => {
   if (!pkgContent.husky) pkgContent.husky = {};
   if (!pkgContent.husky.hooks) pkgContent.husky.hooks = {};
   // 注入husky 在提交前和提交后进行文件和提交注释的校验
-  const lintName = PKG_NAME.split('/')[1];
+  const lintName = PKG_NAME;
 
   pkgContent.scripts[`${lintName}-scan`] = `${lintName} scan`;
   pkgContent.scripts[`${lintName}-fix`] = `${lintName} fix`;

@@ -12,7 +12,9 @@
   "license": "ISC",
   "main": "index.js",
   "files": [
-    "lib"
+    "configs/",
+    "rules/",
+    "README.md"
   ],
   "dependencies": {
     "fs-extra": "^9.0.1",
