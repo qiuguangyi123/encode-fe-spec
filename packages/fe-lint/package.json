@@ -1,6 +1,6 @@
 {
   "name": "fe-lint-qgy",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "规范脚手架",
   "keywords": [
     "qgy",
@@ -55,12 +55,12 @@
     "eslint-config-qgy": "workspace:*",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-vue": "^7.3.0",
-    "eslint-plugin-json": "^3.1.0",
     "execa": "^5.0.0",
     "fast-glob": "^3.2.11",
     "fs-extra": "^9.0.1",
