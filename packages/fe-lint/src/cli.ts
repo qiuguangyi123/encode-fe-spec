@@ -66,7 +66,7 @@ program
   .option('-q --quiet', '仅包含错误信息')
   .option('-o --output-report', '输出扫描出的规范问题日志')
   .option('-i --include <dirPath>', '指定要扫描的目录')
-  .option('--no-ignore', '忽略eslint的ignore配置文件和ignore规则')
+  .option('--noIgnore', '忽略eslint的ignore配置文件和ignore规则')
   .action((options) => {
     try {
       installDepsIfThereNo();
@@ -74,7 +74,7 @@ program
         cwd: options.cwd || process.cwd(),
         include: options.include || process.cwd(),
         quiet: options.quiet || false,
-        ignore: options.ignore || false,
+        ignore: !options.noIgnore ?? true,
         outputReport: options.outputReport || false,
       });
     } catch (err) {

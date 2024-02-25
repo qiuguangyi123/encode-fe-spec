@@ -4,7 +4,7 @@ import { PKG_NAME } from '../../config/constants';
 // 根据当前依赖和文件获取 ESLint 配置类型
 export default (pkg: PKG, cwd: string) => {
   let dsl = '';
-  const tsFiles = glob.sync('./!(node_modules)/**/*.@(ts|tsx)', { cwd: process.cwd() });
+  const tsFiles = glob.sync('./!(node_modules)/**/*.@(ts|tsx)', { cwd });
   const reactFiles = glob.sync('./!(node_modules)/**/*.@(jsx|tsx)', { cwd });
   const vueFiles = glob.sync('./!(node_modules)/**/*.vue', { cwd });
   const tsType = tsFiles.length > 0 ? 'typescript' : '';
@@ -16,5 +16,5 @@ export default (pkg: PKG, cwd: string) => {
     dsl = 'vue';
   }
 
-  return `${PKG_NAME}/${tsType}/${dsl}`.replace(/\/$/, '/index').replace(/^\//, '');
+  return `eslint-config-qgy/${tsType}/${dsl}`.replace(/\/$/, '/index').replace(/\/\//, '/');
 };

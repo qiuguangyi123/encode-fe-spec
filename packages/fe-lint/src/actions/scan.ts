@@ -2,7 +2,7 @@ import path from 'path';
 import type { ScanReport, ScanOptions, PKG, InitOptions, ScanResult } from '../types';
 import fs from 'fs-extra';
 import { PKG_NAME } from '../config/constants';
-import doEslint from '../lint/eslint/doEslint';
+import { doEslint } from '../lint/eslint';
 export default async (options: ScanOptions): Promise<ScanReport> => {
   const { cwd, outputReport, config, fix } = options;
   const pkg: PKG = fs.readJSONSync(path.resolve(cwd, 'package.json'));

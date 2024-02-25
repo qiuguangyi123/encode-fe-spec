@@ -157,7 +157,7 @@ export const ESLINT_IGNORE_PATTERN: string[] = [
   'lib/**',
   '**/*.min.js',
   '**/*-min.js',
-  '**/*.bundle.js',
+  // '**/*.bundle.js',
 ];
 
 /**
