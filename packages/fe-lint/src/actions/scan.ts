@@ -3,6 +3,7 @@ import type { ScanReport, ScanOptions, PKG, InitOptions, ScanResult } from '../t
 import fs from 'fs-extra';
 import { PKG_NAME } from '../config/constants';
 import { doEslint } from '../lint/eslint';
+import { doStylelint } from '../lint/stylelint';
 export default async (options: ScanOptions): Promise<ScanReport> => {
   const { cwd, outputReport, config, fix } = options;
   const pkg: PKG = fs.readJSONSync(path.resolve(cwd, 'package.json'));
@@ -13,6 +14,11 @@ export default async (options: ScanOptions): Promise<ScanReport> => {
     const eslintResults: ScanResult[] = await doEslint({ ...options, pkg, config: scanConfig });
     console.log(eslintResults);
     results.push(...eslintResults);
+  }
+  if (scanConfig.enableStylelint) {
+    const stylelintResults: ScanResult[] = await doStylelint({ ...options, pkg, config: scanConfig });
+    console.log(stylelintResults);
+    results.push(...stylelintResults);
   }
   return {
     results,

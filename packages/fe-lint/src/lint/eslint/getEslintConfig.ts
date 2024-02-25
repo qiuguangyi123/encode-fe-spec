@@ -22,9 +22,9 @@ export default (opts: DoEslintOptions, pkg: PKG, config: Config) => {
     lintConfig = Object.assign(lintConfig, config.eslintOptions);
   } else {
     // 看看目录下是否有eslintrc文件，若无则使用默认的 lint 配置
-    const lintConfigFiles = [] || glob.sync('.eslintrc?(.@(js|yaml|yml|json))', { cwd: opts.cwd });
+    const lintConfigFiles = glob.sync('.eslintrc?(.@(js|yaml|yml|json))', { cwd: opts.cwd });
     if (lintConfigFiles.length <= 0 && !pkg.eslintConfig) {
-      lintConfig.resolvePluginsRelativeTo = '../../'; // 用于解析插件的路径
+      // lintConfig.resolvePluginsRelativeTo = '../../'; // 用于解析插件的路径
       lintConfig.useEslintrc = false; // 是否向上找寻eslintrc文件
       lintConfig.baseConfig = {
         extends: [getExtendConfig(pkg, opts.cwd), config.enablePrettier ? 'prettier' : ''],

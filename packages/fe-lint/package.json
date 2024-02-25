@@ -41,10 +41,10 @@
     "@babel/eslint-parser": "^7.16.3",
     "@babel/preset-react": "^7.16.0",
     "@commitlint/cli": "^16.0.0",
-    "@qgy/commitlint-config": "0.0.11",
-    "@qgy/eslint-config": "0.0.11",
-    "@qgy/markdownlint-config": "0.0.11",
-    "@qgy/stylelint-config": "0.0.11",
+    "commitlint-config-qgy": "workspace:*",
+    "eslint-config-qgy": "workspace:*",
+    "markdownlint-config-qgy": "workspace:*",
+    "stylelint-config-qgy": "workspace:*",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "chalk": "^4.1.0",
@@ -77,9 +77,8 @@
     "strip-ansi": "^6.0.0",
     "stylelint": "^14.3.0",
     "stylelint-scss": "^4.1.0",
-    "terminal-link": "^2.1.1",
-    "text-table": "^0.2.0",
-    "vue-eslint-parser": "^7.3.0"
+    "stylelint-config-recommended-less": "^1.0.4",
+    "stylelint-config-standard": "^29.0.0"
   },
   "repository": {
     "type": "git",

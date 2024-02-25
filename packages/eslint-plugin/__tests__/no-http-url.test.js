@@ -9,6 +9,10 @@ ruleTester.run('no-http-url', rule, {
       filename: 'test.js',
       code: 'var a = "https://qiuguangyi.com"',
     },
+    {
+      filename: 'test.js',
+      code: 'var a = true',
+    },
   ],
   invalid: [
     {

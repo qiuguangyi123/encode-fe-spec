@@ -10,6 +10,7 @@ interface DoEslintOptions extends ScanOptions {
   config: Omit<InitOptions, 'cwd' | 'checkVersionUpdate' | 'disableNpmInstall' | 'rewriteConfig'>;
 }
 export default async (options: DoEslintOptions): Promise<ScanResult[]> => {
+  if (options.config.enableESLint === false) return [];
   // 要扫描的文件数组
   let files: string[] = [];
   if (options.files) {

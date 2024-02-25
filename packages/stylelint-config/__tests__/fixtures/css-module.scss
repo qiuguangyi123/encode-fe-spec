@@ -13,7 +13,7 @@
       user-select: none;
     }
   }
-}
+} 
 
 :global(.tree-node-yellow) {
   :global(.ant-tree-node-content-wrapper) {
@@ -23,7 +23,7 @@
 
 :global(.ant-tree-treenode-switcher-close), :global(.tree-node-file) {
   display: flex;
-  overflow: hidden;
+  overflow: hidden ;
 
   :global(.ant-tree-switcher) {
     flex-shrink: 0;

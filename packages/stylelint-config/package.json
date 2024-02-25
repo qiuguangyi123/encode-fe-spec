@@ -21,8 +21,11 @@
     "stylelint-scss": ">=2.0.0"
   },
   "devDependencies": {
-    "stylelint": "^15.6.0",
-    "stylelint-scss": "^4.1.0"
+    "jest": "^29.5.0",
+    "stylelint": "^14.3.0",
+    "stylelint-scss": "^4.1.0",
+    "stylelint-config-recommended-less": "^1.0.4",
+    "stylelint-config-standard": "^29.0.0"
   },
   "scripts": {
     "prepare": "npm ls stylelint stylelint-scss || echo 'no stylelint stylelint-scss package'",

@@ -157,7 +157,7 @@ export const ESLINT_IGNORE_PATTERN: string[] = [
   'lib/**',
   '**/*.min.js',
   '**/*-min.js',
-  // '**/*.bundle.js',
+  '**/*.bundle.js',
 ];
 
 /**
@@ -169,12 +169,12 @@ export const STYLELINT_FILE_EXT: string[] = ['.css', '.scss', '.less', '.acss'];
  * stylelint 扫描忽略的文件或文件目录
  */
 export const STYLELINT_IGNORE_PATTERN: string[] = [
-  'node_modules/',
-  'build/',
-  'dist/',
-  'coverage/',
-  'es/',
-  'lib/',
+  'node_modules/**',
+  'build/**',
+  'dist/**',
+  'coverage/**',
+  'es/**',
+  'lib/**',
   '**/*.min.css',
   '**/*-min.css',
   '**/*.bundle.css',

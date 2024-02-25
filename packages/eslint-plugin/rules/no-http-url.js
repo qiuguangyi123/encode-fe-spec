@@ -14,7 +14,7 @@ module.exports = {
       Literal(node) {
         const url = node?.value;
         if (!url) return;
-        if (url.startsWith('http://')) {
+        if (typeof url === 'string' && url.startsWith('http://')) {
           context.report({
             loc: node.loc,
             messageId: 'noHttpUrl',
