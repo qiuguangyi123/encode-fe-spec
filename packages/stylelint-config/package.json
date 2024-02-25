@@ -1,6 +1,6 @@
 {
   "name": "stylelint-config-qgy",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "CSS规范",
   "author": "丘光义 <qiuguangyi@52tt.com>",
   "homepage": "https://github.com/qiuguangyi123/encode-fe-spec#readme",
@@ -23,9 +23,9 @@
   "devDependencies": {
     "jest": "^29.5.0",
     "stylelint": "^14.3.0",
-    "stylelint-scss": "^4.1.0",
     "stylelint-config-recommended-less": "^1.0.4",
-    "stylelint-config-standard": "^29.0.0"
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-scss": "^4.1.0"
   },
   "scripts": {
     "prepare": "npm ls stylelint stylelint-scss || echo 'no stylelint stylelint-scss package'",
