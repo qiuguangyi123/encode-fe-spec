@@ -1,6 +1,6 @@
 import path from 'path';
 import { STYLELINT_FILE_EXT, STYLELINT_IGNORE_PATTERN } from '../../config/constants';
-import { InitOptions, PKG, ScanOptions } from '../../types';
+import { InitOptions, PKG, ScanOptions, ScanResult } from '../../types';
 import glob from 'glob';
 import stylelint from 'stylelint';
 import getStylelintConfig from './getStylelintConfig';
@@ -10,7 +10,7 @@ interface DoStylelintOptions extends ScanOptions {
   pkg: PKG;
   config: Omit<InitOptions, 'cwd' | 'checkVersionUpdate' | 'disableNpmInstall' | 'rewriteConfig'>;
 }
-export default async (options: DoStylelintOptions) => {
+export default async (options: DoStylelintOptions): Promise<ScanResult[]> => {
   if (options.config.enableStylelint === false) return [];
   // 要扫描的文件数组
   let files: string[] = [];
