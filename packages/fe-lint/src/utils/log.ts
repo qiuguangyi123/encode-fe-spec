@@ -11,7 +11,7 @@ export default {
   warn(text: string) {
     console.warn(chalk.yellow(text));
   },
-  error(text: string) {
+  error(text: string | Error) {
     console.error(chalk.red(text));
   },
   result(text: string, pass: boolean) {

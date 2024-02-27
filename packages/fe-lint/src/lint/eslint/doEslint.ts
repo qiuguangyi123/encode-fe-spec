@@ -1,5 +1,5 @@
 import path from 'path';
-import { InitOptions, PKG, ScanOptions, ScanResult } from '../../types';
+import { Config, InitOptions, PKG, ScanOptions, ScanResult } from '../../types';
 import { ESLINT_FILE_EXT, ESLINT_IGNORE_PATTERN } from '../../config/constants';
 import glob from 'glob';
 import { ESLint } from 'eslint';
@@ -7,7 +7,7 @@ import getEslintConfig from './getEslintConfig';
 import { formatESLintResults } from './formatESLintResults';
 interface DoEslintOptions extends ScanOptions {
   pkg: PKG;
-  config: Omit<InitOptions, 'cwd' | 'checkVersionUpdate' | 'disableNpmInstall' | 'rewriteConfig'>;
+  config: Config;
 }
 export default async (options: DoEslintOptions): Promise<ScanResult[]> => {
   if (options.config.enableESLint === false) return [];

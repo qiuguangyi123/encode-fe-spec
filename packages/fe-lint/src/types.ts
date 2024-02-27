@@ -1,6 +1,7 @@
 import { ESLint } from 'eslint';
 import stylelint from 'stylelint';
 import markdownlint from 'markdownlint';
+import prettier from 'prettier';
 
 export interface PKG {
   eslintConfig?: any;
@@ -27,6 +28,8 @@ export interface Config {
   stylelintOptions?: stylelint.LinterOptions;
   // markdownlint 配置项
   markdownlintOptions?: markdownlint.Options;
+  // prettier options
+  prettierOptions?: prettier.Options;
 }
 
 export interface InitOptions {

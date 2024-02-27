@@ -16,7 +16,6 @@ export default (results: markdownlint.LintResults, quiet: boolean): ScanResult[]
       ({ lineNumber, ruleNames, ruleDescription, ruleInformation, errorRange, fixInfo }) => {
         if (fixInfo) fixableWarningCount++;
         warningCount++;
-
         return {
           line: lineNumber,
           column: Array.isArray(errorRange) ? errorRange[0] : 1,

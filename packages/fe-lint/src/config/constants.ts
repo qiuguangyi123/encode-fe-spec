@@ -188,7 +188,14 @@ export const MARKDOWN_LINT_FILE_EXT: string[] = ['.md'];
 /**
  * markdownLint 扫描忽略的文件或文件目录
  */
-export const MARKDOWN_LINT_IGNORE_PATTERN: string[] = ['node_modules/', 'build/', 'dist/', 'coverage/', 'es/', 'lib/'];
+export const MARKDOWN_LINT_IGNORE_PATTERN: string[] = [
+  'node_modules/**',
+  'build/**',
+  'dist/**',
+  'coverage/**',
+  'es/**',
+  'lib/**',
+];
 
 /**
  * Prettier 扫描文件扩展名

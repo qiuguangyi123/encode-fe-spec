@@ -42,7 +42,7 @@ export default async (options: DoMarkdownlintOptions): Promise<ScanResult[]> => 
     glob
       .sync(`**/*.@(${MARKDOWN_LINT_FILE_EXT.map((name) => name.replace(/\./gi, '')).join('|')})`, {
         cwd: path.resolve(options.cwd, options.include),
-        ignore: MARKDOWN_LINT_IGNORE_PATTERN,
+        ignore: options.ignore ? MARKDOWN_LINT_IGNORE_PATTERN : [],
       })
       .map((file) => path.resolve(options.cwd, options.include, file)),
   );
@@ -51,7 +51,7 @@ export default async (options: DoMarkdownlintOptions): Promise<ScanResult[]> => 
     files,
   });
   // 修复
-  if (options.fix) {
+  if (options.fix || true) {
     await Promise.all(
       Object.keys(results).map(async (filename) => {
         results[filename] = await formatMarkdownFile(filename, results[filename]);

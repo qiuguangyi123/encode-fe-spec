@@ -24,7 +24,7 @@ export default async (options: DoStylelintOptions): Promise<ScanResult[]> => {
     glob
       .sync(`**/*.@(${STYLELINT_FILE_EXT.map((name) => name.replace(/\./gi, '')).join('|')})`, {
         cwd: path.resolve(options.cwd, options.include),
-        ignore: STYLELINT_IGNORE_PATTERN,
+        ignore: options.ignore ? STYLELINT_IGNORE_PATTERN : [],
       })
       .map((file) => path.resolve(options.cwd, options.include, file)),
   );

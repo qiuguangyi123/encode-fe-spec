@@ -11,6 +11,8 @@ import glob from 'glob';
 import { spawnSync } from 'child_process';
 import npmType from './utils/npmType';
 import scan from './actions/scan';
+import ora from 'ora';
+import printFormattedResults from './utils/printFormattedResults';
 
 const cwd = process.cwd();
 // 注册版本号
@@ -62,27 +64,43 @@ program
   });
 program
   .command('scan')
-  .description('扫描代码规范')
+  .description('一键扫描：对项目进行代码规范问题扫描')
   .option('-q --quiet', '仅包含错误信息')
   .option('-o --output-report', '输出扫描出的规范问题日志')
   .option('-i --include <dirPath>', '指定要扫描的目录')
-  .option('--noIgnore', '忽略eslint的ignore配置文件和ignore规则')
-  .action((options) => {
+  .option('-f --fix', '自动修复')
+  .option('--noIgnore', '忽略ignore配置文件和ignore规则')
+  .action(async (options) => {
+    const checking = ora();
+    checking.start(`执行 ${PKG_NAME} 代码检查`);
     try {
       installDepsIfThereNo();
-      scan({
+      const { runErrors, errorCount, warningCount, results } = await scan({
         cwd: options.cwd || process.cwd(),
         include: options.include || process.cwd(),
         quiet: options.quiet || false,
         ignore: !options.noIgnore ?? true,
         outputReport: options.outputReport || false,
       });
+      let type = 'succeed';
+      if (errorCount > 0) type = 'fail';
+      else if (warningCount > 0) type = 'warn';
+      checking[type]();
+      if (results.length > 0) printFormattedResults(results, false);
+      if (runErrors.length > 0) runErrors.forEach((error) => log.error(error));
     } catch (err) {
       console.log(err);
+      checking.fail();
       log.error('扫描出错，请稍后再试！');
       process.exit(1);
     }
   });
-
+program
+  .command('commit-msg-scan')
+  .description('commit message 检查: git commit 时对 commit message 进行检查')
+  .action(async () => {
+    const { status } = spawnSync('commitlint', ['-E', 'HUSKY_GIT_PARAMS']);
+    if (status !== 0) process.exit(status);
+  });
 // 注入命令行参数
 program.parse(program.argv);
