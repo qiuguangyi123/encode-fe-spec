@@ -23,7 +23,7 @@ export default async (install: boolean = false) => {
   const loading = ora('更新版本中。。。');
   try {
     loading.start();
-    const lastVersion = spawnSync(npmType(), ['view', PKG_NAME, 'version']).stdout.toString().trim() || '0.11.0';
+    const lastVersion = spawnSync(npmType(), ['view', PKG_NAME, 'version']).stdout.toString().trim();
     // console.log('lastVersion', lastVersion);
     const updateVersionState = update(lastVersion, PKG_VERSION);
     if (!install && updateVersionState) {

@@ -13,6 +13,8 @@ import npmType from './utils/npmType';
 import scan from './actions/scan';
 import ora from 'ora';
 import printFormattedResults from './utils/printFormattedResults';
+import { gitDiffNameOnly, gitDiffStaged } from './utils/git';
+import updateVersion from './utils/updateVersion';
 
 const cwd = process.cwd();
 // 注册版本号
@@ -95,12 +97,52 @@ program
       process.exit(1);
     }
   });
+
 program
   .command('commit-msg-scan')
   .description('commit message 检查: git commit 时对 commit message 进行检查')
   .action(async () => {
-    const { status } = spawnSync('commitlint', ['-E', 'HUSKY_GIT_PARAMS']);
-    if (status !== 0) process.exit(status);
+    try {
+      const { status } = spawnSync('commitlint', ['-E', 'HUSKY_GIT_PARAMS']);
+      if (status !== 0) {
+        log.error('commit message 格式不正确，请检查后重新提交');
+        process.exit(status);
+      }
+    } catch (err) {
+      log.error(err);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('commit-file-scan')
+  .description('代码提交检查: git commit 时对提交代码进行规范问题扫描')
+  .option('-s, --strict', '严格模式，对 warn 和 error 问题都卡口，默认仅对 error 问题卡口')
+  .action(async (options) => {
+    const files = await gitDiffNameOnly({});
+    if (files && files.length > 0) {
+      log.warn(`[${PKG_NAME}] changes not staged for commit: \n${files}\n`);
+    }
+    const cacheFiles = await gitDiffStaged({});
+    console.log(cacheFiles);
+    const { errorCount, warningCount } = await scan({
+      cwd: process.cwd(),
+      include: process.cwd(),
+      quiet: !options.strict,
+      fix: false,
+      outputReport: false,
+    });
+    if (errorCount || (options.strict && warningCount)) {
+      log.error(`[${PKG_NAME}] 代码提交失败，请检查代码规范问题`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('update')
+  .description('更新规范工具')
+  .action(() => {
+    updateVersion();
   });
 // 注入命令行参数
 program.parse(program.argv);

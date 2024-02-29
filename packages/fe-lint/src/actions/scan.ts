@@ -27,7 +27,6 @@ export default async (options: ScanOptions): Promise<ScanReport> => {
   if (scanConfig.enableESLint) {
     try {
       const eslintResults: ScanResult[] = await doEslint({ ...options, pkg, config: scanConfig });
-      console.log(eslintResults);
       results.push(...eslintResults);
     } catch (err) {
       runErrors.push(err);
@@ -37,7 +36,6 @@ export default async (options: ScanOptions): Promise<ScanReport> => {
   if (scanConfig.enableStylelint) {
     try {
       const stylelintResults: ScanResult[] = await doStylelint({ ...options, pkg, config: scanConfig });
-      console.log(stylelintResults);
       results.push(...stylelintResults);
     } catch (err) {
       runErrors.push(err);
@@ -47,7 +45,6 @@ export default async (options: ScanOptions): Promise<ScanReport> => {
   if (scanConfig.enableMarkdownlint) {
     try {
       const markdownResults: ScanResult[] = await doMarkdownlint({ ...options, pkg, config: scanConfig });
-      console.log(markdownResults);
       results.push(...markdownResults);
     } catch (err) {
       runErrors.push(err);
