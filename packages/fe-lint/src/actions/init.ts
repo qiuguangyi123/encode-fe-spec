@@ -38,8 +38,8 @@ export default async (options: InitOptions) => {
       log.info('准备开始检查是否有配置冲突～');
       await configCollocate({ cwd: options.cwd, rewriteConfig: options.rewriteConfig });
       if (!options.disableNpmInstall) {
-        const install = npmType();
-        spawnSync(install, ['install', PKG_NAME], { stdio: 'inherit' });
+        const installNpm = npmType();
+        spawnSync(installNpm, ['install', PKG_NAME], { stdio: 'inherit' });
       }
       log.info('检查配置冲突完成！');
     }
