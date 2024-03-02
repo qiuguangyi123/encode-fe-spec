@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/qiuguangyi123/encode-fe-spec/issues"
   },
-  "dependencies": {
+  "peerDependencies": {
     "conventional-changelog-conventionalcommits": "^4.5.0"
   },
   "gitHead": "2855658755874c38206b008463e243b4662976e3"
