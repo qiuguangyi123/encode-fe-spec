@@ -4,7 +4,7 @@ import fs from 'fs-extra';
 import path from 'path';
 import log from '../utils/log';
 import inquirer from 'inquirer';
-import { INQUIRER_VALUE, REMOVE_PACKAGE_NAME, REMOVE_PACKAGE_PREFIXES } from '../config/constants';
+import { ADD_PACKAGE_NAME, INQUIRER_VALUE, REMOVE_PACKAGE_NAME, REMOVE_PACKAGE_PREFIXES } from '../config/constants';
 const checkUselessConfig: () => string[] = () => {
   return new Array<string>()
     .concat(glob.sync('.eslintrc?(.@(yaml|yml|json|js))'))
@@ -58,6 +58,14 @@ export default async (options: Pick<InitOptions, 'cwd' | 'rewriteConfig'>) => {
     for (const packageName of removePackageName) {
       if (pkg?.dependencies) delete pkg?.dependencies[packageName];
       if (pkg?.devDependencies) delete pkg?.devDependencies[packageName];
+    }
+  }
+  // 添加依赖
+  if (Object.keys(ADD_PACKAGE_NAME).length) {
+    for (const type of Object.keys(ADD_PACKAGE_NAME)) {
+      if (!Object.keys(ADD_PACKAGE_NAME[type]).length) continue;
+      if (!pkg[type]) pkg[type] = {};
+      pkg[type] = Object.assign(pkg[type], ADD_PACKAGE_NAME[type]);
     }
   }
   if (resetFiles.length) {

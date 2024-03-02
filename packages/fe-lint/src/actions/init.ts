@@ -39,7 +39,14 @@ export default async (options: InitOptions) => {
       await configCollocate({ cwd: options.cwd, rewriteConfig: options.rewriteConfig });
       if (!options.disableNpmInstall) {
         const installNpm = npmType();
+        spawnSync(installNpm, ['install'], { stdio: 'inherit' });
         spawnSync(installNpm, ['install', PKG_NAME], { stdio: 'inherit' });
+        if (config.enableStylelint)
+          spawnSync(installNpm, ['install', 'stylelint-config-qgy', '-D'], { stdio: 'inherit' });
+        if (config.enableMarkdownlint)
+          spawnSync(installNpm, ['install', 'markdownlint-config-qgy', '-D'], { stdio: 'inherit' });
+        if (config.enableCommitlint)
+          spawnSync(installNpm, ['install', 'commitlint-config-qgy', '-D'], { stdio: 'inherit' });
       }
       log.info('检查配置冲突完成！');
     }

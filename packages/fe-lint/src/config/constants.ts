@@ -139,6 +139,19 @@ export const REMOVE_PACKAGE_PREFIXES: string[] = [
   'commitlint-',
 ];
 
+export const ADD_PACKAGE_NAME: Record<string, Record<string, string>> = {
+  devDependencies: {
+    '@commitlint/cli': '^16.0.0',
+    'conventional-changelog-conventionalcommits': '^4.5.0',
+    markdownlint: '^0.25.1',
+    'markdownlint-rule-helpers': '^0.13.0',
+    stylelint: '^14.3.0',
+    'stylelint-config-recommended-less': '^1.0.4',
+    'stylelint-config-standard': '^29.0.0',
+    'stylelint-scss': '^4.1.0',
+  },
+};
+
 /**
  * eslint 扫描文件扩展名
  */

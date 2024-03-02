@@ -17,7 +17,7 @@ export const gitDiffStaged = async (options: execa.Options) => {
       ...options,
     },
   );
-  return stdout.split(eol);
+  return stdout.split('\n');
 };
 
 // 比较 工作区 与 最近一次提交的差别
@@ -27,5 +27,5 @@ export const gitDiffNameOnly = async (options: execa.Options) => {
     all: true,
     ...options,
   });
-  return stdout ? stdout.split(eol) : null;
+  return stdout ? stdout.split('\n') : null;
 };

@@ -83,12 +83,13 @@ program
         quiet: options.quiet || false,
         ignore: !options.noIgnore ?? true,
         outputReport: options.outputReport || false,
+        fix: options.fix ?? false,
       });
       let type = 'succeed';
       if (errorCount > 0) type = 'fail';
       else if (warningCount > 0) type = 'warn';
       checking[type]();
-      if (results.length > 0) printFormattedResults(results, false);
+      if (results.length > 0) printFormattedResults(results, options.fix);
       if (runErrors.length > 0) runErrors.forEach((error) => log.error(error));
     } catch (err) {
       console.log(err);
@@ -124,14 +125,16 @@ program
       log.warn(`[${PKG_NAME}] changes not staged for commit: \n${files}\n`);
     }
     const cacheFiles = await gitDiffStaged({});
-    console.log(cacheFiles);
-    const { errorCount, warningCount } = await scan({
+    const { errorCount, warningCount, results } = await scan({
       cwd: process.cwd(),
       include: process.cwd(),
       quiet: !options.strict,
       fix: false,
       outputReport: false,
+      files: cacheFiles,
+      ignore: true,
     });
+    if (results.length > 0) printFormattedResults(results, false);
     if (errorCount || (options.strict && warningCount)) {
       log.error(`[${PKG_NAME}] 代码提交失败，请检查代码规范问题`);
       process.exit(1);
