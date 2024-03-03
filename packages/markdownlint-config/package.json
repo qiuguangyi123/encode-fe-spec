@@ -1,6 +1,6 @@
 {
   "name": "markdownlint-config-qgy",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "index.json",
   "description": "文档规范",
   "keywords": [
