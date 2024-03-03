@@ -24,7 +24,13 @@ export default (result: ScanResult[], fix: boolean) => {
     if (rule) {
       text = chalk.blue(rule);
     }
-    return [`${index}.`, chalk.dim(`${line}${column}`), `${errored ? 'error' : 'warning'}`, `${text}`, message.trim()];
+    return [
+      `${index + 1}.`,
+      chalk.dim(`line:${line}.column:${column}`),
+      `${errored ? chalk.red('error') : chalk.yellow('warning')}`,
+      `${text}`,
+      message.trim(),
+    ];
   }
   // 获取到每个文件的错误信息
   for (let i of result) {
@@ -34,9 +40,9 @@ export default (result: ScanResult[], fix: boolean) => {
     fixErrorsCount += i.fixableErrorCount;
     fixWarningsCount += i.fixableWarningCount;
     output += `${chalk.blue(i.filePath)}${eol}`;
-    // 将文件的错误信息转为table格式;
+    // 拿到每一条错误 将文件的错误信息转为table格式;
     output += table(i.messages.map(transformMessage), {
-      align: ['.', 'r', 'l'],
+      align: ['.', '.', 'l', 'l', 'l'],
       stringLength: (str: string) => stripAnsi(str).length,
     });
     output += `${eol}${eol}`;
@@ -51,7 +57,7 @@ export default (result: ScanResult[], fix: boolean) => {
       output += chalk[summaryColor](
         `errorCount:${errorCount} warningsCount:${warningCount}${eol}fixableErrorCount:${fixErrorsCount} fixableWarningCount:${fixWarningsCount}${eol}`,
       );
-      output += chalk[summaryColor](`potentially fixable with the \` ${PKG_NAME} fix\``);
+      output += chalk[summaryColor](`potentially fixable with the \` ${PKG_NAME} scan -f\``);
     } else output = chalk.green.bold(`${UNICODE.success} no problems`);
   }
   console.log(output);

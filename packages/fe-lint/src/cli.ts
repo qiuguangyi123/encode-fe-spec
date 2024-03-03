@@ -107,7 +107,7 @@ program
       const { status } = spawnSync('commitlint', ['-E', 'HUSKY_GIT_PARAMS']);
       if (status !== 0) {
         log.error('commit message 格式不正确，请检查后重新提交');
-        process.exit(status);
+        process.exit(1);
       }
     } catch (err) {
       log.error(err);

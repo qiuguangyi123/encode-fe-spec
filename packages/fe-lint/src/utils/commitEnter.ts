@@ -9,16 +9,16 @@ export default (options: Pick<InitOptions, 'cwd'>) => {
   const pkgPath = path.resolve(options.cwd, 'package.json');
   const pkgContent = fs.readJSONSync(pkgPath);
   if (!pkgContent.scripts) pkgContent.scripts = {};
-  if (!pkgContent.husky) pkgContent.husky = {};
-  if (!pkgContent.husky.hooks) pkgContent.husky.hooks = {};
+  // if (!pkgContent.husky) pkgContent.husky = {};
+  // if (!pkgContent.husky.hooks) pkgContent.husky.hooks = {};
   // 注入husky 在提交前和提交后进行文件和提交注释的校验
   const lintName = PKG_NAME;
-
+  // npm指令
   pkgContent.scripts[`${lintName}-scan`] = `${lintName} scan`;
-  pkgContent.scripts[`${lintName}-fix`] = `${lintName} fix`;
-
-  pkgContent.husky.hooks['pre-commit'] = `${lintName} commit-file-scan`;
-  pkgContent.husky.hooks['commit-msg'] = `${lintName} commit-msg-scan`;
+  pkgContent.scripts[`${lintName}-fix`] = `${lintName} scan -f`;
+  pkgContent.scripts['prepare'] = `npx husky install`;
+  // pkgContent.husky.hooks['pre-commit'] = `${lintName} commit-file-scan`;
+  // pkgContent.husky.hooks['commit-msg'] = `${lintName} commit-msg-scan`;
   // console.log(Buffer.call(pkgContent));
   fs.writeFileSync(pkgPath, Buffer.from(JSON.stringify(pkgContent)));
   log.success('配置 git commit 卡点成功');

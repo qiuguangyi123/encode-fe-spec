@@ -60,10 +60,9 @@ export default (cwd: string, options: Omit<InitOptions, 'cwd' | 'checkVersionUpd
     if (/^_vscode/.test(name)) {
       content = mergeVSCodeConfig(filepath, content);
     }
-
     // 跳过空文件
     if (!content.trim()) continue;
-
+    // console.log(filepath);
     fs.outputFileSync(filepath, content, 'utf8');
   }
 };

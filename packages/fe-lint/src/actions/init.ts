@@ -33,6 +33,8 @@ export default async (options: InitOptions) => {
     config.enableCommitlint =
       options.enableCommitlint ||
       (await inquirer.prompt(INQUIRER_VALUE[INQUIRER.ENABLE_COMMITLINT]))[INQUIRER.ENABLE_COMMITLINT];
+    // 卡点
+    commitEnter({ cwd: options.cwd });
     if (!isTest) {
       // 归置目前存在的配置
       log.info('准备开始检查是否有配置冲突～');
@@ -50,8 +52,6 @@ export default async (options: InitOptions) => {
       }
       log.info('检查配置冲突完成！');
     }
-    // 卡点
-    commitEnter({ cwd: options.cwd });
     log.info('开始写入配置文件');
     // 渲染模板
     renderTemplate(options.cwd, config);
