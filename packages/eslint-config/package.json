@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-qgy",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "eslint规范配置",
   "author": "丘光义 <qiuguangyi@52tt.com>",
   "homepage": "https://github.com/qiuguangyi123/encode-fe-spec#readme",
@@ -31,7 +31,7 @@
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-jsx-plus": "^0.1.0",
-    "eslint-plugin-qgy": "^1.0.1",
+    "eslint-plugin-qgy": "^1.0.2",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-vue": "^7.3.0",
