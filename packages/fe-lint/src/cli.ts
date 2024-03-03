@@ -15,7 +15,7 @@ import ora from 'ora';
 import printFormattedResults from './utils/printFormattedResults';
 import { gitDiffNameOnly, gitDiffStaged } from './utils/git';
 import updateVersion from './utils/updateVersion';
-import execa from 'execa';
+import spawn from 'cross-spawn';
 
 const cwd = process.cwd();
 // 注册版本号
@@ -105,9 +105,15 @@ program
   .description('commit message 检查: git commit 时对 commit message 进行检查')
   .action(async () => {
     try {
-      const s = await execa('commitlint', ['-E', 'HUSKY_GIT_PARAMS']);
-      console.log(process.env.HUSKY_GIT_PARAMS, s, 1111);
-      process.exit(1);
+      const result = spawn.sync('commitlint', ['-E', 'HUSKY_GIT_PARAMS'], { stdio: 'inherit' });
+      console.log(result, 666);
+      if (result.status !== 0) {
+        log.error('commit message 格式不正确，请检查后重新提交');
+        process.exit(result.status);
+      }
+      // const s = await execa('commitlint', ['-E', 'HUSKY_GIT_PARAMS']);
+      // console.log(process.env.HUSKY_GIT_PARAMS, s, 1111);
+      // process.exit(1);
       // if (s.status !== 0) {
       //   log.error('commit message 格式不正确，请检查后重新提交');
       //   process.exit(1);
