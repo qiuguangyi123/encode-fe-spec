@@ -10,7 +10,7 @@
   "author": "丘光义 <qiuguangyi@52tt.com>",
   "homepage": "https://github.com/qiuguangyi123/encode-fe-spec#readme",
   "license": "ISC",
-  "main": "n",
+  "main": "./lib/index.js",
   "bin": "./lib/cli.js",
   "directories": {
     "lib": "lib",
