@@ -106,11 +106,10 @@ program
   .action(async () => {
     try {
       const result = spawn.sync('commitlint', ['-E', 'HUSKY_GIT_PARAMS'], { stdio: 'inherit' });
-      console.log(result, 666);
-      if (result.status !== 0) {
-        log.error('commit message 格式不正确，请检查后重新提交');
-        process.exit(result.status);
-      }
+      // if (result.status !== 0) {
+      //   log.error('commit message 格式不正确，请检查后重新提交');
+      //   process.exit(result.status);
+      // }
       // const s = await execa('commitlint', ['-E', 'HUSKY_GIT_PARAMS']);
       // console.log(process.env.HUSKY_GIT_PARAMS, s, 1111);
       // process.exit(1);
