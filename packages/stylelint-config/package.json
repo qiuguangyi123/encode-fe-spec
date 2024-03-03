@@ -1,6 +1,6 @@
 {
   "name": "stylelint-config-qgy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CSS规范",
   "author": "丘光义 <qiuguangyi@52tt.com>",
   "homepage": "https://github.com/qiuguangyi123/encode-fe-spec#readme",
@@ -34,5 +34,5 @@
   "bugs": {
     "url": "https://github.com/qiuguangyi123/encode-fe-spec/issues"
   },
-  "gitHead": "2855658755874c38206b008463e243b4662976e3"
+  "gitHead": "b2f65d8fd0bd2433f857c1d84e8dac18825e1047"
 }
