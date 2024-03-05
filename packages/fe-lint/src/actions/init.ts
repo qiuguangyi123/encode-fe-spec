@@ -48,7 +48,9 @@ export default async (options: InitOptions) => {
         if (config.enableMarkdownlint)
           spawnSync(installNpm, ['install', 'markdownlint-config-qgy', '-D'], { stdio: 'inherit' });
         if (config.enableCommitlint)
-          spawnSync(installNpm, ['install', 'commitlint-config-qgy', '-D'], { stdio: 'inherit' });
+          spawnSync(installNpm, ['install', 'conventional-changelog-lint-config-commitlint-config-qgy', '-D'], {
+            stdio: 'inherit',
+          });
       }
       log.info('检查配置冲突完成！');
     }
