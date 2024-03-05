@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-qgy",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "自定义插件",
   "keywords": [
     "eslint",
@@ -35,5 +35,5 @@
   "bugs": {
     "url": "https://github.com/qiuguangyi123/encode-fe-spec/issues"
   },
-  "gitHead": "b2f65d8fd0bd2433f857c1d84e8dac18825e1047"
+  "gitHead": "98585bde410febc637effe675d302a083eb0f433"
 }

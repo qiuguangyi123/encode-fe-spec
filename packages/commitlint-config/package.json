@@ -1,6 +1,6 @@
 {
   "name": "conventional-changelog-lint-config-commitlint-config-qgy",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "index.js",
   "description": "印客学院 Git规范",
   "keywords": [
@@ -24,5 +24,5 @@
   "peerDependencies": {
     "conventional-changelog-conventionalcommits": "^4.5.0"
   },
-  "gitHead": "b2f65d8fd0bd2433f857c1d84e8dac18825e1047"
+  "gitHead": "98585bde410febc637effe675d302a083eb0f433"
 }
