@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx fe-lint-qgy commit-msg-scan
+npx commitlint --edit $1

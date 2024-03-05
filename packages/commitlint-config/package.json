@@ -1,5 +1,5 @@
 {
-  "name": "commitlint-config-qgy",
+  "name": "conventional-changelog-lint-config-commitlint-config-qgy",
   "version": "1.0.4",
   "main": "index.js",
   "description": "印客学院 Git规范",

@@ -149,6 +149,7 @@ export const ADD_PACKAGE_NAME: Record<string, Record<string, string>> = {
     'stylelint-config-recommended-less': '^1.0.4',
     'stylelint-config-standard': '^29.0.0',
     'stylelint-scss': '^4.1.0',
+    husky: '9.0.11',
   },
 };
 
