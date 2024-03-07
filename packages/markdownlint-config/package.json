@@ -1,6 +1,6 @@
 {
   "name": "markdownlint-config-qgy",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "main": "index.json",
   "description": "文档规范",
   "keywords": [
@@ -24,5 +24,5 @@
   "peerDependencies": {
     "markdownlint": "^0.28.1"
   },
-  "gitHead": "98585bde410febc637effe675d302a083eb0f433"
+  "gitHead": "39614b69b6abb0cfb712ca6ceab19dd18a4100bd"
 }
