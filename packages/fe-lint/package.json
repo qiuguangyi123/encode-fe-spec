@@ -90,6 +90,7 @@
     "url": "git+https://github.com/qiuguangyi123/encode-fe-spec.git"
   },
   "scripts": {
+    "prepublishOnly": "npm run build",
     "test": "node ./__tests__/@qgy/fe-lint.test.js",
     "build": "npm run copyfile && tsc",
     "dev": "npm run copyfile && tsc -w",
