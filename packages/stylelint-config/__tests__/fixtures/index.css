@@ -8,13 +8,13 @@
 
 .selector1 {
   padding-left: 15px;
-
   background-size: 0, 0;
 }
 
 .selector2 {
   padding-left: 15px;
 }
+
 .selector3 {
   padding-left: 15px;
 }
@@ -26,15 +26,6 @@
 
 .selector5 {
   width: 0;
-
   color: #aaa;
   background: #aaa;
 }
-
-#foo {
-  color: #ccc;
-}
-
-/* comment */
-
-@unkown colorTag(#abc);

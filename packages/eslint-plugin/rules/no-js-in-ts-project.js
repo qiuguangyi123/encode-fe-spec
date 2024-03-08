@@ -20,8 +20,8 @@ module.exports = {
     let { whileList = [], merger = true } = ruleOptions;
     if (!whileList.length) {
       whileList = DEFAULT_WHITE_LIST;
-    } else if (merger) {
-      whileList = Array.from(new Set([...DEFAULT_WHITE_LIST, ...whileList]));
+    } else {
+      whileList = Array.from(new Set([...(merger ? DEFAULT_WHITE_LIST : []), ...whileList]));
     }
     const whileListReg = new RegExp(`(${whileList.join('|')})$`);
     if (!whileListReg.test(fileName) && JS_REG.test(extName)) {
