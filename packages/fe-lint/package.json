@@ -1,6 +1,6 @@
 {
   "name": "fe-lint-qgy",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "规范脚手架",
   "keywords": [
     "qgy",
@@ -52,13 +52,13 @@
     "eslint": "^8.7.0",
     "eslint-config-egg": "^10.0.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-config-qgy": "^1.0.12",
+    "eslint-config-qgy": "^1.0.13",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-qgy": "^1.0.12",
+    "eslint-plugin-qgy": "^1.0.13",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-vue": "^7.3.0",
@@ -70,13 +70,13 @@
     "is-docker": "^2.1.1",
     "lodash": "^4.17.20",
     "markdownlint": "^0.25.1",
-    "markdownlint-config-qgy": "^1.0.12",
+    "markdownlint-config-qgy": "^1.0.13",
     "markdownlint-rule-helpers": "^0.13.0",
     "ora": "^5.1.0",
     "prettier": "^2.2.1",
     "strip-ansi": "^6.0.0",
     "stylelint": "^14.3.0",
-    "stylelint-config-qgy": "^1.0.12",
+    "stylelint-config-qgy": "^1.0.13",
     "stylelint-config-recommended-less": "^1.0.4",
     "stylelint-config-standard": "^29.0.0",
     "stylelint-scss": "^4.1.0",
@@ -99,5 +99,5 @@
   "bugs": {
     "url": "https://github.com/qiuguangyi123/encode-fe-spec/issues"
   },
-  "gitHead": "fbb06da03cdc0b7e9c867b49e81404028c9b6c42"
+  "gitHead": "835b9ed901197bb76d6ddc2dcc6ea5c3e9ee999b"
 }
