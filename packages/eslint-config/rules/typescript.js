@@ -4,9 +4,8 @@
  */
 
 module.exports = {
-  // parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
-  extends: ['plugin:@typescript-eslint/recommended'],
   settings: {
     // Apply special parsing for TypeScript files
     'import/parsers': {
@@ -560,11 +559,11 @@ module.exports = {
     ],
 
     /**
-     * 【强制】声明的变量必须被使用
+     * 【不强制】声明的变量不用一定被使用
      * @extend
      */
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: true }],
+    '@typescript-eslint/no-unused-vars': ['warnings', { vars: 'all', args: 'after-used', ignoreRestSiblings: true }],
 
     /**
      * 【关闭】禁止已定义的变量未使用

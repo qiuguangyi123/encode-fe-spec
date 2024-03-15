@@ -4,9 +4,8 @@
  */
 
 module.exports = {
-  // parser: "vue-eslint-parser",
+  parser: 'vue-eslint-parser',
   plugins: ['vue'],
-  extends: ['plugin:vue/vue3-essential'],
   rules: {
     // 给 template 提供 eslint-disable 的能力，支持如下注释：
     // eslint-disable，eslint-enable，eslint-disable-line，eslint-disable-next-line
