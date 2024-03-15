@@ -2,6 +2,6 @@ module.exports = {
   plugins: ['qgy'],
   rules: {
     'qgy/no-broad-semantic-versioning': 'error',
-    'qgy/no-http-url': 1,
+    'qgy/no-http-url': 'warn',
   },
 };

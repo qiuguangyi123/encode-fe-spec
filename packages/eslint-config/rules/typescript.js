@@ -563,7 +563,7 @@ module.exports = {
      * @extend
      */
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': ['warnings', { vars: 'all', args: 'after-used', ignoreRestSiblings: true }],
+    '@typescript-eslint/no-unused-vars': ['warn', { vars: 'all', args: 'after-used', ignoreRestSiblings: true }],
 
     /**
      * 【关闭】禁止已定义的变量未使用
