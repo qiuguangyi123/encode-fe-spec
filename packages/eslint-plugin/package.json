@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-qgy",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "自定义插件",
   "keywords": [
     "eslint",

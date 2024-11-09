@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.20](https://github.com/qiuguangyi123/encode-fe-spec/compare/fe-lint-qgy@1.0.19...fe-lint-qgy@1.0.20) (2024-11-09)
+
+
+### Bug Fixes
+
+* 修复 ts ([173cad0](https://github.com/qiuguangyi123/encode-fe-spec/commit/173cad0e519ae74643686278a30127ab48b073ee))
+* test ([37ee93a](https://github.com/qiuguangyi123/encode-fe-spec/commit/37ee93a6b12b91a9c8e29a9a655b58153d242bd6))
+
+
+
+
+
 ## 1.0.19 (2024-11-09)
 
 
