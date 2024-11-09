@@ -82,7 +82,7 @@ program
         cwd: options.cwd || process.cwd(),
         include: options.include || process.cwd(),
         quiet: options.quiet || false,
-        ignore: !options.noIgnore ?? true,
+        ignore: !options.noIgnore || true,
         outputReport: options.outputReport || false,
         fix: options.fix ?? false,
       });
