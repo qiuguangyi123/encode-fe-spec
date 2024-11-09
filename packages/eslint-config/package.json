@@ -31,7 +31,7 @@
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-jsx-plus": "^0.1.0",
-    "eslint-plugin-qgy": "workspace:*",
+    "eslint-plugin-qgy": "1.0.19",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-vue": "^7.3.0",
@@ -40,5 +40,5 @@
     "typescript": "^4.1.2",
     "vue-eslint-parser": "^7.3.0"
   },
-  "gitHead": "835b9ed901197bb76d6ddc2dcc6ea5c3e9ee999b"
+  "gitHead": "ce32c52b9f6b02d172d9fd0aa6a7735d4b2b4750"
 }

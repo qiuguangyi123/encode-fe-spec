@@ -52,13 +52,13 @@
     "eslint": "^8.7.0",
     "eslint-config-egg": "^10.0.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-config-qgy": "workspace:*",
+    "eslint-config-qgy": "1.0.19",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-qgy": "workspace:*",
+    "eslint-plugin-qgy": "1.0.19",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-vue": "^7.3.0",
@@ -70,13 +70,13 @@
     "is-docker": "^2.1.1",
     "lodash": "^4.17.20",
     "markdownlint": "^0.25.1",
-    "markdownlint-config-qgy": "workspace:*",
+    "markdownlint-config-qgy": "1.0.19",
     "markdownlint-rule-helpers": "^0.13.0",
     "ora": "^5.1.0",
     "prettier": "^2.2.1",
     "strip-ansi": "^6.0.0",
     "stylelint": "^14.3.0",
-    "stylelint-config-qgy": "workspace:*",
+    "stylelint-config-qgy": "1.0.19",
     "stylelint-config-recommended-less": "^1.0.4",
     "stylelint-config-standard": "^29.0.0",
     "stylelint-scss": "^4.1.0",
@@ -99,5 +99,5 @@
   "bugs": {
     "url": "https://github.com/qiuguangyi123/encode-fe-spec/issues"
   },
-  "gitHead": "98585bde410febc637effe675d302a083eb0f433"
+  "gitHead": "ce32c52b9f6b02d172d9fd0aa6a7735d4b2b4750"
 }

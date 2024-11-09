@@ -1,15 +1,17 @@
 {
-  "version": "1.0.18",
+  "version": "independent",
   "npmClient": "pnpm",
   "useWorkspaces": true,
   "command": {
     "publish": {
+      "bump": "patch",
+      "yes": true,
+      "no-private": true,
+      "conventionalCommits": true,
       "npmClient": "npm",
       "message": "chore(release): publish %s",
       "registry": "https://registry.npmjs.org/"
     },
-    "packages": [
-      "packages/*"
-    ]
+    "packages": ["packages/*"]
   }
 }
