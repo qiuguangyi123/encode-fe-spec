@@ -13,7 +13,7 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "deploy": "bash deploy.sh",
-    "publish": "lerna publish --force-publish",
+    "publish": "lerna version --yes --conventional-commits --message 'chore: release [skip ci]'&& lerna publish from-package --yes",
     "lint": "markdownlint README.md",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
